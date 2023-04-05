@@ -15,4 +15,5 @@ export declare const werify: () => {
     getNewModalSession: (accessToken: string, endpoint: string) => Promise<any>;
     claimModalSession: (accessToken: string, endpoint: string) => Promise<any>;
     claimQRSession: (accessToken: string, endpoint: string) => Promise<any>;
+    checkUsername: (accessToken: string, endpoint: string) => Promise<any>;
 };

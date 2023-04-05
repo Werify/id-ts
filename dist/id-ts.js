@@ -1,4 +1,4 @@
-const y = () => {
+const g = () => {
   let r = {
     baseURL: ""
   };
@@ -46,9 +46,13 @@ const y = () => {
     claimQRSession: async (t, n) => fetch(
       r.baseURL + n,
       { headers: { authorization: t } }
+    ).then((e) => e.json()).then((e) => e),
+    checkUsername: async (t, n) => fetch(
+      r.baseURL + (n || "/api/user/check-username"),
+      { headers: { authorization: t } }
     ).then((e) => e.json()).then((e) => e)
   };
 };
 export {
-  y as werify
+  g as werify
 };
