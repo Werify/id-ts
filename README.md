@@ -91,6 +91,7 @@ updateFinancialInfo| PUT | form data | /api/user/financial-information/
 getNewModalSession| GET | _ | /api/user/modal
 claimModalSession| GET | _ | /api/modal/{hash}/{id}
 claimQRSession| GET | _ | /api/qr/{hash}/{id}
+checkUsername| POST | _ | /api/check-username
 
 #### user profile
 GET `api/user/profile/`.
