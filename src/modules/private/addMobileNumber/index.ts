@@ -4,10 +4,10 @@ import { config } from "../../config"
 * @param mobile_number: send mobile number
 * @argument token
 * @returns mobile number list
-* @default /api/user/mobile-numbers
+* @default /api/v1/user/mobile-numbers
 */
 export const addMobileNumber = async (accessToken: string, mobile_number: string, endpoint: string) => {
-    return fetch(config.baseURL + (endpoint ? endpoint : '/api/user/mobile-numbers'),
+    return fetch(config.baseURL + (endpoint ? endpoint : '/api/v1/user/mobile-numbers'),
         { headers: { 'authorization': accessToken }, method: 'post', body: mobile_number })
         .then(response => response.json())
         .then(json => { return json })

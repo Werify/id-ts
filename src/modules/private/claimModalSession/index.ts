@@ -4,7 +4,7 @@ import { config } from "../../config";
    * @example api/modal/{hash}/{id}
    * @argument token
    * @returns returns new session for modal and user
-   * @default /api/modal/{hash}/{id}
+   * @default /api/v1/modal/{hash}/{id}
    */
 export const claimModalSession = async (accessToken: string, endpoint: string) => {
     return fetch(config.baseURL + endpoint,

@@ -4,6 +4,6 @@
     * @argument id
     * @example api/session-check/modal or qr/{hash}/{id}
     * @returns token and user data
-    * @default /api/session-check/modal/{hash}/{id}
+    * @default /api/v1/session-check/modal/{hash}/{id}
     */
 export declare const checkSession: (endpoint: string) => Promise<any>;

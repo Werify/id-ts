@@ -4,11 +4,11 @@ import { config } from "../../config"
   * @param any: Send Fields tou want to change
   * @argument token
   * @returns User Financial Information
-  * @default /api/user/financial-information
+  * @default /api/v1/user/financial-information
   */
 export const updateFinancialInfo = async (accessToken: string, endpoint: string) => {
-    return fetch(config.baseURL + (endpoint ? endpoint : '/api/user/financial-information'),
-        { headers: { 'authorization': accessToken }, method: 'put' })
-        .then(response => response.json())
-        .then(json => { return json })
+  return fetch(config.baseURL + (endpoint ? endpoint : '/api/v1/user/financial-information'),
+    { headers: { 'authorization': accessToken }, method: 'put' })
+    .then(response => response.json())
+    .then(json => { return json })
 }

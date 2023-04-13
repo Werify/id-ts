@@ -3,6 +3,6 @@
    * @example api/modal/{hash}/{id}
    * @argument token
    * @returns returns new session for modal and user
-   * @default /api/modal/{hash}/{id}
+   * @default /api/v1/modal/{hash}/{id}
    */
 export declare const claimModalSession: (accessToken: string, endpoint: string) => Promise<any>;

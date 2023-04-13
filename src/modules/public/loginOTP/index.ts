@@ -5,10 +5,10 @@ import { config } from "../../config"
 * @param hash: string
 * @param otp: string
 * @returns Access Token and User Data
-* @default /api/otp
+* @default /api/v1/otp
 */
 export const loginOTP = async (payload: any, endpoint?: string) => {
-    return fetch(config.baseURL + (endpoint ? endpoint : '/api/otp'), { method: 'post', body: payload })
+    return fetch(config.baseURL + (endpoint ? endpoint : '/api/v1/otp'), { method: 'post', body: payload })
         .then(response => response.json())
         .then(json => { return json })
 }

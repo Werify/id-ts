@@ -58,17 +58,17 @@ authService.login('/endpoint', payload).then().catch()
 
 Function | method | params | default endpoint
 ---- | ---- | ---- | --- |
-login| POST | identifier | /api/login
-loginOTP| POST | id, hash, otp | /api/otp
-getQRSession| GET | _ | /api/qr
-checkSession| GET | _ | /api/session-check/model/{hash}/{id}
+login| POST | identifier | /api/v1/v1/login
+loginOTP| POST | id, hash, otp | /api/v1/v1/otp
+getQRSession| GET | _ | /api/v1/v1/qr
+checkSession| GET | _ | /api/v1/v1/session-check/model/{hash}/{id}
 
 
 #### request user login otp 
-POST `/api/login` requires `identifier` & returns session.
+POST `/api/v1/v1/login` requires `identifier` & returns session.
 
 #### login user with otp
-POST `/api/otp` requires `id`,`hash`,`otp` & returns token for user with some info.
+POST `/api/v1/v1/otp` requires `id`,`hash`,`otp` & returns token for user with some info.
 
 #### get new qr session
 GET `api/qr/` return qr code session.
@@ -82,16 +82,16 @@ GET `api/session-check/modal/{hash}/{id}` returns token for user with some info.
 ----------
 Function | method | params | default endpoint
 ---- | ---- | ---- | --- |
-getUserProfile| GET | _ | /api/user/profile
-getUserNumbers| GET | _ | /api/user/profile/mobile-numbers
-getFinancialInfo| GET | _ | /api/user/financial-information
-updateUserProfile| PUT | form data | /api/user/profile
-addMobileNumber| POST | mobile_number | /api/user/mobile-numbers
-updateFinancialInfo| PUT | form data | /api/user/financial-information/
-getNewModalSession| GET | _ | /api/user/modal
-claimModalSession| GET | _ | /api/modal/{hash}/{id}
-claimQRSession| GET | _ | /api/qr/{hash}/{id}
-checkUsername| POST | _ | /api/check-username
+getUserProfile| GET | _ | /api/v1/v1/user/profile
+getUserNumbers| GET | _ | /api/v1/v1/user/profile/mobile-numbers
+getFinancialInfo| GET | _ | /api/v1/v1/user/financial-information
+updateUserProfile| PUT | form data | /api/v1/v1/user/profile
+addMobileNumber| POST | mobile_number | /api/v1/v1/user/mobile-numbers
+updateFinancialInfo| PUT | form data | /api/v1/v1/user/financial-information/
+getNewModalSession| GET | _ | /api/v1/v1/user/modal
+claimModalSession| GET | _ | /api/v1/v1/modal/{hash}/{id}
+claimQRSession| GET | _ | /api/v1/v1/qr/{hash}/{id}
+checkUsername| POST | _ | /api/v1/v1/check-username
 
 #### user profile
 GET `api/user/profile/`.

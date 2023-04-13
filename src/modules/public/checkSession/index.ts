@@ -5,7 +5,7 @@ import { config } from "../../config"
     * @argument id
     * @example api/session-check/modal or qr/{hash}/{id}
     * @returns token and user data
-    * @default /api/session-check/modal/{hash}/{id}
+    * @default /api/v1/session-check/modal/{hash}/{id}
     */
 export const checkSession = async (endpoint: string,) => {
     return fetch(config.baseURL + endpoint)
