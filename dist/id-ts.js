@@ -2,9 +2,9 @@ let r = {
   baseURL: ""
 };
 const a = async (n, t) => fetch(
-  r.baseURL + (t || "/api/v1/login"),
+  r.baseURL + (t || "/api/v1/request-otp"),
   { method: "post", body: n }
-).then((e) => e.json()).then((e) => e), o = async (n, t) => fetch(r.baseURL + (t || "/api/v1/otp"), { method: "post", body: n }).then((e) => e.json()).then((e) => e), h = async (n) => fetch(r.baseURL + (n || "/api/v1/qr")).then((t) => t.json()).then((t) => t), c = async (n) => fetch(r.baseURL + n).then((t) => t.json()).then((t) => t), u = async (n, t) => fetch(
+).then((e) => e.json()).then((e) => e), o = async (n, t) => fetch(r.baseURL + (t || "/api/v1/otp"), { method: "post", body: n }).then((e) => e.json()).then((e) => e), h = async (n) => fetch(r.baseURL + (n || "/api/v1/qr")).then((t) => t.json()).then((t) => t), u = async (n) => fetch(r.baseURL + n).then((t) => t.json()).then((t) => t), c = async (n, t) => fetch(
   r.baseURL + (t || "/api/v1/user/profile"),
   { headers: { authorization: n } }
 ).then((e) => e.json()).then((e) => e), i = async (n, t) => fetch(
@@ -36,11 +36,11 @@ const a = async (n, t) => fetch(
   { headers: { authorization: n } }
 ).then((e) => e.json()).then((e) => e), d = () => ({
   config: r,
-  login: a,
+  requestOTP: a,
   loginOTP: o,
   getQRSession: h,
-  checkSession: c,
-  getUserProfile: u,
+  checkSession: u,
+  getUserProfile: c,
   getUserNumbers: i,
   getFinancialInfo: f,
   updateUserProfile: b,

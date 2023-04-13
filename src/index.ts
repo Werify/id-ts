@@ -1,6 +1,6 @@
 //#region Public Routes
 import { config } from "./modules/config"
-import { login } from "./modules/public/login"
+import { requestOTP } from "./modules/public/requestOTP"
 import { loginOTP } from "./modules/public/loginOTP"
 import { getQRSession } from "./modules/public/getQRSession"
 import { checkSession } from "./modules/public/checkSession"
@@ -22,7 +22,7 @@ import { checkUsername } from "./modules/private/checkUsername"
 export const werify = () => {
   return {
     config,
-    login,
+    requestOTP,
     loginOTP,
     getQRSession,
     checkSession,
