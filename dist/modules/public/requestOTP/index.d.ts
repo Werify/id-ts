@@ -1,3 +1,4 @@
+import type { ILoginResponse } from './interface/Login';
 /**
     * @description request user login otp
     * @param identifier: string such as email
@@ -5,4 +6,4 @@
     * @returns a session
     * @default /api/v1/login
     */
-export declare const requestOTP: (identifier: string, endpoint?: string) => Promise<unknown>;
+export declare const requestOTP: (identifier: string, endpoint?: string) => Promise<ILoginResponse>;
