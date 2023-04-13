@@ -1,58 +1,56 @@
-const g = () => {
-  let r = {
-    baseURL: ""
-  };
-  return {
-    config: r,
-    login: async (t, n) => fetch(
-      r.baseURL + (t || "/api/login"),
-      { method: "post", body: n }
-    ).then((e) => e.json()).then((e) => e),
-    loginOTP: async (t, n) => fetch(r.baseURL + (n || "/api/otp"), { method: "post", body: t }).then((e) => e.json()).then((e) => e),
-    getQRSession: async (t) => fetch(r.baseURL + (t || "/api/qr")).then((n) => n.json()).then((n) => n),
-    checkSession: async (t) => fetch(r.baseURL + t).then((n) => n.json()).then((n) => n),
-    getUserProfile: async (t, n) => fetch(
-      r.baseURL + (n || "/api/user/profile"),
-      { headers: { authorization: t } }
-    ).then((e) => e.json()).then((e) => e),
-    getUserNumbers: async (t, n) => fetch(
-      r.baseURL + (n || "/api/user/profile/mobile-numbers"),
-      { headers: { authorization: t } }
-    ).then((e) => e.json()).then((e) => e),
-    getFinancialInfo: async (t, n) => fetch(
-      r.baseURL + (n || "/api/user/financial-information"),
-      { headers: { authorization: t } }
-    ).then((e) => e.json()).then((e) => e),
-    updateUserProfile: async (t, n) => fetch(
-      r.baseURL + (n || "/api/user/profile"),
-      { headers: { authorization: t }, method: "put" }
-    ).then((e) => e.json()).then((e) => e),
-    addMobileNumber: async (t, n, e) => fetch(
-      r.baseURL + (e || "/api/user/mobile-numbers"),
-      { headers: { authorization: t }, method: "post", body: n }
-    ).then((s) => s.json()).then((s) => s),
-    updateFinancialInfo: async (t, n) => fetch(
-      r.baseURL + (n || "/api/user/financial-information"),
-      { headers: { authorization: t }, method: "put" }
-    ).then((e) => e.json()).then((e) => e),
-    getNewModalSession: async (t, n) => fetch(
-      r.baseURL + (n || "/api/user/modal"),
-      { headers: { authorization: t } }
-    ).then((e) => e.json()).then((e) => e),
-    claimModalSession: async (t, n) => fetch(
-      r.baseURL + n,
-      { headers: { authorization: t } }
-    ).then((e) => e.json()).then((e) => e),
-    claimQRSession: async (t, n) => fetch(
-      r.baseURL + n,
-      { headers: { authorization: t } }
-    ).then((e) => e.json()).then((e) => e),
-    checkUsername: async (t, n) => fetch(
-      r.baseURL + (n || "/api/user/check-username"),
-      { headers: { authorization: t } }
-    ).then((e) => e.json()).then((e) => e)
-  };
+let r = {
+  baseURL: ""
 };
+const a = async (n, t) => fetch(
+  r.baseURL + (t || "/api/login"),
+  { method: "post", body: n }
+).then((e) => e.json()).then((e) => e), o = async (n, t) => fetch(r.baseURL + (t || "/api/otp"), { method: "post", body: n }).then((e) => e.json()).then((e) => e), h = async (n) => fetch(r.baseURL + (n || "/api/qr")).then((t) => t.json()).then((t) => t), c = async (n) => fetch(r.baseURL + n).then((t) => t.json()).then((t) => t), u = async (n, t) => fetch(
+  r.baseURL + (t || "/api/user/profile"),
+  { headers: { authorization: n } }
+).then((e) => e.json()).then((e) => e), i = async (n, t) => fetch(
+  r.baseURL + (t || "/api/user/profile/mobile-numbers"),
+  { headers: { authorization: n } }
+).then((e) => e.json()).then((e) => e), f = async (n, t) => fetch(
+  r.baseURL + (t || "/api/user/financial-information"),
+  { headers: { authorization: n } }
+).then((e) => e.json()).then((e) => e), b = async (n, t) => fetch(
+  r.baseURL + (t || "/api/user/profile"),
+  { headers: { authorization: n }, method: "put" }
+).then((e) => e.json()).then((e) => e), l = async (n, t, e) => fetch(
+  r.baseURL + (e || "/api/user/mobile-numbers"),
+  { headers: { authorization: n }, method: "post", body: t }
+).then((s) => s.json()).then((s) => s), U = async (n, t) => fetch(
+  r.baseURL + (t || "/api/user/financial-information"),
+  { headers: { authorization: n }, method: "put" }
+).then((e) => e.json()).then((e) => e), m = async (n, t) => fetch(
+  r.baseURL + (t || "/api/user/modal"),
+  { headers: { authorization: n } }
+).then((e) => e.json()).then((e) => e), y = async (n, t) => fetch(
+  r.baseURL + t,
+  { headers: { authorization: n } }
+).then((e) => e.json()).then((e) => e), R = async (n, t) => fetch(
+  r.baseURL + t,
+  { headers: { authorization: n } }
+).then((e) => e.json()).then((e) => e), L = async (n, t) => fetch(
+  r.baseURL + (t || "/api/user/check-username"),
+  { headers: { authorization: n } }
+).then((e) => e.json()).then((e) => e), d = () => ({
+  config: r,
+  login: a,
+  loginOTP: o,
+  getQRSession: h,
+  checkSession: c,
+  getUserProfile: u,
+  getUserNumbers: i,
+  getFinancialInfo: f,
+  updateUserProfile: b,
+  addMobileNumber: l,
+  updateFinancialInfo: U,
+  getNewModalSession: m,
+  claimModalSession: y,
+  claimQRSession: R,
+  checkUsername: L
+});
 export {
-  g as werify
+  d as werify
 };
