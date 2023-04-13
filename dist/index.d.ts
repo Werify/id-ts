@@ -1,6 +1,6 @@
 export declare const werify: () => {
     config: import("./modules/config/interface/Config").IConfig;
-    requestOTP: (identifier: any, endpoint?: string | undefined) => Promise<import("./modules/public/requestOTP/interface/Login").ILoginResponse>;
+    requestOTP: (identifier: string, endpoint?: string | undefined) => Promise<unknown>;
     loginOTP: (payload: any, endpoint?: string | undefined) => Promise<any>;
     getQRSession: (endpoint: string) => Promise<any>;
     checkSession: (endpoint: string) => Promise<any>;
