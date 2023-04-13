@@ -4,4 +4,4 @@
     * @returns a session
     * @default /api/login
     */
-export declare const login: (endpoint: string, identifier: any) => Promise<any>;
+export declare const login: (identifier: any, endpoint?: string) => Promise<any>;

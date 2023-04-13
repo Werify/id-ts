@@ -2,8 +2,8 @@ export declare const werify: () => {
     config: {
         baseURL: string;
     };
-    login: (endpoint: string, identifier: any) => Promise<any>;
-    loginOTP: (payload: any, endpoint: string) => Promise<any>;
+    login: (identifier: any, endpoint?: string | undefined) => Promise<any>;
+    loginOTP: (payload: any, endpoint?: string | undefined) => Promise<any>;
     getQRSession: (endpoint: string) => Promise<any>;
     checkSession: (endpoint: string) => Promise<any>;
     getUserProfile: (accessToken: string, endpoint: string) => Promise<any>;

@@ -6,4 +6,4 @@
 * @returns Access Token and User Data
 * @default /api/otp
 */
-export declare const loginOTP: (payload: any, endpoint: string) => Promise<any>;
+export declare const loginOTP: (payload: any, endpoint?: string) => Promise<any>;
