@@ -1,66 +1,73 @@
+// Public Routes
+import { config } from "./modules/config"
+import { login } from "./modules/public/login"
+import { loginOTP } from "./modules/public/loginOTP"
+import { getQRSession } from "./modules/public/getQRSession"
+import { checkSession } from "./modules/public/checkSession"
+// Public Routes
 export const werify = () => {
-  /**
-    * @description Set Base URL and other configs
-    * @param endpoint: string
-    * @returns your base URL is Set
-    */
-  let config = {
-    baseURL: ''
-  }
+  // /**
+  //   * @description Set Base URL and other configs
+  //   * @param endpoint: string
+  //   * @returns your base URL is Set
+  //   */
+  // let config = {
+  //   baseURL: ''
+  // }
 
   //#region Login Apis (Public Routes)
 
-  /**
-    * @description request user login otp
-    * @param identifier: string
-    * @returns a session 
-    * @default /api/login
-    */
-  const login = async (endpoint: string, identifier: any) => {
-    return fetch(config.baseURL + (endpoint ? endpoint : '/api/login'),
-      { method: 'post', body: identifier })
-      .then(response => response.json())
-      .then(json => { return json })
-  }
+  // /**
+  //   * @description request user login otp
+  //   * @param identifier: string
+  //   * @returns a session 
+  //   * @default /api/login
+  //   */
+  // const login = async (endpoint: string, identifier: any) => {
+  //   return fetch(config.baseURL + (endpoint ? endpoint : '/api/login'),
+  //     { method: 'post', body: identifier })
+  //     .then(response => response.json())
+  //     .then(json => { return json })
+  // }
 
-  /**
-    * @description Login user with OTP
-    * @param id: string
-    * @param hash: string
-    * @param otp: string
-    * @returns Access Token and User Data
-    * @default /api/otp
-    */
-  const loginOTP = async (payload: any, endpoint: string) => {
-    return fetch(config.baseURL + (endpoint ? endpoint : '/api/otp'), { method: 'post', body: payload })
-      .then(response => response.json())
-      .then(json => { return json })
-  }
+  // /**
+  //   * @description Login user with OTP
+  //   * @param id: string
+  //   * @param hash: string
+  //   * @param otp: string
+  //   * @returns Access Token and User Data
+  //   * @default /api/otp
+  //   */
+  // const loginOTP = async (payload: any, endpoint: string) => {
+  //   return fetch(config.baseURL + (endpoint ? endpoint : '/api/otp'), { method: 'post', body: payload })
+  //     .then(response => response.json())
+  //     .then(json => { return json })
+  // }
 
-  /**
-    * @description Get a new QR session
-    * @returns a QR session 
-    * @default /api/qr
-    */
-  const getQRSession = async (endpoint: string,) => {
-    return fetch(config.baseURL + (endpoint ? endpoint : '/api/qr'))
-      .then(response => response.json())
-      .then(json => { return json })
-  }
+  // /**
+  //   * @description Get a new QR session
+  //   * @returns a QR session 
+  //   * @default /api/qr
+  //   */
+  // const getQRSession = async (endpoint: string,) => {
+  //   return fetch(config.baseURL + (endpoint ? endpoint : '/api/qr'))
+  //     .then(response => response.json())
+  //     .then(json => { return json })
+  // }
 
-  /**
-    * @description Get login session (both QR and modal)
-    * @argument hash
-    * @argument id
-    * @example api/session-check/modal or qr/{hash}/{id}
-    * @returns token and user data
-    * @default /api/session-check/modal/{hash}/{id}
-    */
-  const checkSession = async (endpoint: string,) => {
-    return fetch(config.baseURL + endpoint)
-      .then(response => response.json())
-      .then(json => { return json })
-  }
+  // /**
+  //   * @description Get login session (both QR and modal)
+  //   * @argument hash
+  //   * @argument id
+  //   * @example api/session-check/modal or qr/{hash}/{id}
+  //   * @returns token and user data
+  //   * @default /api/session-check/modal/{hash}/{id}
+  //   */
+  // const checkSession = async (endpoint: string,) => {
+  //   return fetch(config.baseURL + endpoint)
+  //     .then(response => response.json())
+  //     .then(json => { return json })
+  // }
 
   //#endregion
 
