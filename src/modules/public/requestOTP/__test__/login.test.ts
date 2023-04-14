@@ -1,8 +1,8 @@
 import 'whatwg-fetch'
-import { type SpyInstance, describe, test, vi, beforeEach, expect, expectTypeOf } from 'vitest'
+import { type SpyInstance, describe, test, vi, beforeEach, expect } from 'vitest'
 import { requestOTP } from '..'
 import { config } from '../../../config'
-import { ILoginResponse } from '../interface/Login'
+import type { ILoginResponse } from '../interface/ILogin'
 
 config.baseURL = 'https://id.werify.net'
 
@@ -15,8 +15,7 @@ describe('Request an OTP service', () => {
 
     test('Req OTP', async () => {
         const res = await requestOTP('mamad@mamad.com')
-        console.log(res);
         expect(reqSpy).toHaveBeenCalledOnce()
-        expect(res.results).toMatchObject({} as ILoginResponse)
+        expect(res).toMatchObject({} as ILoginResponse)
     })
 })

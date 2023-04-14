@@ -1,7 +1,7 @@
 export declare const werify: () => {
     config: import("./modules/config/interface/Config").IConfig;
-    requestOTP: (identifier: string, endpoint?: string | undefined) => Promise<import("./modules/public/requestOTP/interface/Login").ILoginResponse>;
-    loginOTP: (payload: any, endpoint?: string | undefined) => Promise<any>;
+    requestOTP: (identifier: string, endpoint?: string | undefined) => Promise<import("./modules/public/requestOTP/interface/ILogin").ILoginResponse>;
+    verifyOTP: (payload: import("./modules/public/verifyOTP/interfaces/IVerifyOTP").IVerifyOTPPayload, endpoint?: string | undefined) => Promise<import("./modules/public/verifyOTP/interfaces/IVerifyOTP").IVerifyOTPResponse>;
     getQRSession: (endpoint: string) => Promise<any>;
     checkSession: (endpoint: string) => Promise<any>;
     getUserProfile: (accessToken: string, endpoint: string) => Promise<any>;

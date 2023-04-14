@@ -16,3 +16,10 @@ export interface IVerifyOTPResponse extends IGlobalRes {
     access_token: string,
     token_type: string
 }
+
+export interface IVerifyOTPPayload {
+    type: string
+    hash: string
+    otp: string
+    id: string
+}

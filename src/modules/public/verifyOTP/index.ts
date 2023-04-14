@@ -1,5 +1,6 @@
 import { config } from "../../config"
-import { IVerifyOTPResponse } from "./interfaces/VerifyOTP"
+import { requestHeader } from "../../config/requestHeader"
+import { IVerifyOTPPayload, IVerifyOTPResponse } from "./interfaces/IVerifyOTP"
 /**
 * @description Login user with OTP
 * @param id: string
@@ -8,8 +9,8 @@ import { IVerifyOTPResponse } from "./interfaces/VerifyOTP"
 * @returns Access Token and User Data
 * @default /api/v1/otp
 */
-export const loginOTP = async (payload: any, endpoint?: string) => {
-    return fetch(config.baseURL + (endpoint ? endpoint : '/api/v1/otp'), { method: 'post', body: payload })
+export const verifyOTP = async (payload: IVerifyOTPPayload, endpoint?: string) => {
+    return fetch(config.baseURL + (endpoint ? endpoint : '/api/v1/verify-otp'), { headers: requestHeader, method: 'post', body: JSON.stringify(payload) })
         .then(async response => {
             if (response.ok) {
                 return await response.json() as IVerifyOTPResponse

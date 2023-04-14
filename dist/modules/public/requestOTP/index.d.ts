@@ -1,4 +1,4 @@
-import type { ILoginResponse } from './interface/Login';
+import type { ILoginResponse } from './interface/ILogin';
 /**
     * @description request user login otp
     * @param identifier: string such as email
