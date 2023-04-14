@@ -1,4 +1,5 @@
 import { config } from "../../config"
+import { IVerifyOTPResponse } from "./interfaces/VerifyOTP"
 /**
 * @description Login user with OTP
 * @param id: string
@@ -9,6 +10,12 @@ import { config } from "../../config"
 */
 export const loginOTP = async (payload: any, endpoint?: string) => {
     return fetch(config.baseURL + (endpoint ? endpoint : '/api/v1/otp'), { method: 'post', body: payload })
-        .then(response => response.json())
-        .then(json => { return json })
+        .then(async response => {
+            if (response.ok) {
+                return await response.json() as IVerifyOTPResponse
+            } else {
+                const errorMessage = await response.text()
+                return Promise.reject(new Error(errorMessage))
+            }
+        })
 }

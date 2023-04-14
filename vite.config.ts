@@ -7,6 +7,7 @@ import dts from 'vite-plugin-dts';
 export default defineConfig({
     test: {
         globals: true,
+        environment: 'happy-dom'
     },
     build: {
         lib: {

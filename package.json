@@ -46,5 +46,9 @@
     "vite": "^4.2.0",
     "vite-plugin-dts": "^2.1.0",
     "vitest": "^0.29.7"
+  },
+  "dependencies": {
+    "happy-dom": "^9.6.1",
+    "whatwg-fetch": "^3.6.2"
   }
 }

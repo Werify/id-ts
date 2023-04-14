@@ -1,4 +1,4 @@
-import { requestHeader } from '../../config/RequestHeader'
+import { requestHeader } from '../../config/requestHeader'
 import { config } from '../../config/index'
 import type { ILoginResponse } from './interface/Login'
 /**
@@ -13,7 +13,7 @@ export const requestOTP = async (identifier: string, endpoint?: string) => {
         { headers: requestHeader, method: 'post', body: JSON.stringify({ identifier: identifier }) })
         .then(async response => {
             if (response.ok) {
-                return await response.json() as ILoginResponse
+                return await response.json()
             } else {
                 const errorMessage = await response.text()
                 return Promise.reject(new Error(errorMessage))
