@@ -16,6 +16,6 @@ describe('Request an OTP service', () => {
     test('Req OTP', async () => {
         const res = await requestOTP('mamad@mamad.com')
         expect(reqSpy).toHaveBeenCalledOnce()
-        expect(res).toMatchObject({} as ILoginResponse)
+        expect(res.results).toMatchObject({} as ILoginResponse)
     })
 })

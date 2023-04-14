@@ -1,4 +1,5 @@
 import { config } from "../../config"
+import { IGetUserResponse } from "./interface/IUserProfile"
 /**
    * @description Get User Profile Data
    * @argument token
@@ -8,6 +9,12 @@ import { config } from "../../config"
 export const getUserProfile = async (accessToken: string, endpoint: string) => {
     return fetch(config.baseURL + (endpoint ? endpoint : '/api/v1/user/profile'),
         { headers: { 'authorization': accessToken } })
-        .then(response => response.json())
-        .then(json => { return json })
+        .then(async response => {
+            if (response.ok) {
+                return await response.json() as IGetUserResponse
+            } else {
+                const errorMessage = await response.text()
+                return Promise.reject(new Error(errorMessage))
+            }
+        })
 }

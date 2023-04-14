@@ -1,5 +1,5 @@
 import { IGlobalRes } from "../../../interface/Global";
-export interface IVerifyOTPResponse extends IGlobalRes {
+interface IVerifyRes {
     first_name: string;
     middle_name: string;
     last_name: string;
@@ -15,9 +15,13 @@ export interface IVerifyOTPResponse extends IGlobalRes {
     access_token: string;
     token_type: string;
 }
+export interface IVerifyOTPResponse extends IGlobalRes {
+    results: IVerifyRes;
+}
 export interface IVerifyOTPPayload {
     type: string;
     hash: string;
     otp: string;
     id: string;
 }
+export {};
